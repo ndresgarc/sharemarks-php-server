@@ -16,3 +16,11 @@ PHP server for the Sharemarks project
 ### PUT /bookmarks?id=<int>
 
 ### DELETE /bookmarks?=<int>
+
+
+## TODO
++ Localization
++ Redirect to a bookmark
++ Proxy a bookmark
++ Auth
++ Error handling

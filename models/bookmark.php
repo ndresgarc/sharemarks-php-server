@@ -70,6 +70,61 @@ class Bookmark {
 
     }
 
+    public function edit() {
+
+        $query = '
+            UPDATE '
+                . $this -> table . 
+            ' SET 
+                url = :url
+            WHERE
+                id = :id
+        ';
+
+        $statement = $this -> connection -> prepare($query);
+
+        // TODO: decode?
+        // $this -> url = ...
+
+        $statement -> bindParam(':url', $this -> url);
+        $statement -> bindParam(':id', $this -> id);
+
+        if ($statement -> execute()) {
+            return true;
+        }
+
+        // Something went wrong
+        printf("Error: %s. \n", $statement -> error);
+
+        return false;
+
+    }
+
+    public function delete() {
+
+        $query = '
+            DELETE FROM 
+                ' . $this -> table . '
+            WHERE
+                id = :id
+        ';
+
+        $statement = $this -> connection -> prepare($query);
+
+        $statement -> bindParam(':id', $this -> id);
+
+        if ($statement -> execute()) {
+            return true;
+        }
+
+        // Something went wrong
+        printf("Error: %s. \n", $statement -> error);
+
+        return false;
+
+
+    }
+
 }
 
 ?>

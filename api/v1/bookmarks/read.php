@@ -12,32 +12,15 @@
 
     $bookmark = new Bookmark($db);
 
-    $result = $bookmark -> read();
-    $num = $result -> rowCount();
+    $bookmark -> id = isset($_GET['id']) ? $_GET['id'] : die();
 
-    if ($num > 0) {
+    $bookmark -> read_single();
 
-        $bookmarks_array = array();
-        $bookmarks_array['data'] = array();
-    
-        while($row = $result -> fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
-            $bookmark_item = array(
-                'id' => $id,
-                'url' => $url
-            );
-            array_push($bookmarks_array['data'], $bookmark_item);
-        }
+    $bookmarks_array = array(
+        'id' => $bookmark -> id,
+        'url' => $bookmark -> url
+    );
 
-        // Turn to JSON
-        echo json_encode($bookmarks_array);
-
-    } else {
-
-        echo json_encode(
-            array('message' => 'No posts found')
-        );
-
-    }
+    print_r(json_encode($bookmarks_array));
 
 ?>

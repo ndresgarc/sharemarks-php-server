@@ -43,6 +43,33 @@ class Bookmark {
         return $statement;
     }
 
+    public function add() {
+
+        $query = '
+            INSERT INTO '
+                . $this -> table . 
+            ' SET 
+                url = :url
+        ';
+
+        $statement = $this -> connection -> prepare($query);
+
+        // TODO: decode?
+        // $this -> url = ...
+
+        $statement -> bindParam(':url', $this -> url);
+
+        if ($statement -> execute()) {
+            return true;
+        }
+
+        // Something went wrong
+        printf("Error: %s. \n", $statement -> error);
+
+        return false;
+
+    }
+
 }
 
 ?>

@@ -10,7 +10,7 @@ GitHub
 
 Packagist
 
-`composer require vitalis/hello-composer`
+`composer require ndresgarc/sharemarks-php-server`
 
 ## API Endpoints
 

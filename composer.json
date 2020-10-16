@@ -1,0 +1,12 @@
+{
+    "name": "andres/sharemarks-php-server",
+    "description": "Bookmark manager server",
+    "type": "project",
+    "authors": [
+        {
+            "name": "ndresgarc",
+            "email": "email@andresgarcia.dev"
+        }
+    ],
+    "require": {}
+}

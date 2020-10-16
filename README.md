@@ -2,6 +2,16 @@
 
 PHP server for the Sharemarks project
 
+## Install 
+
+GitHub
+
+`git clone https://github.com/ndresgarc/sharemarks-php-server.git`
+
+Packagist
+
+`composer require vitalis/hello-composer`
+
 ## API Endpoints
 
 ### GET /bookmarks

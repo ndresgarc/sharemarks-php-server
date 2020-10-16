@@ -17,7 +17,7 @@
     $data = json_decode(file_get_contents("php://input"));
 
     $bookmark -> url = $data -> url;
-    $bookmark -> id = $data -> id;
+    $bookmark -> id = $_GET['id'];
 
     if ($bookmark -> edit()) {
         echo json_encode(

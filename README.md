@@ -1,25 +1,33 @@
 # sharemarks-php-server
-PHP server for the Sharemarks project
 
+PHP server for the Sharemarks project
 
 ## API Endpoints
 
 ### GET /bookmarks
-```
-```
 
+Returns a list of all stored bookmarks
 
-### GET /bookmarks?id=<int>
+### GET /bookmarks/:id
+
+Returns only one bookmark referenced by `:id`
 
 ### POST /bookmarks
 
-### PUT /bookmarks?id=<int>
+Adds a new bookmark to the database
 
-### DELETE /bookmarks?=<int>
+### PUT /bookmarks/:id
 
+Updates a bookmark reference by `:id` in the database
+
+### DELETE /bookmarks/:id
+
+Deletes the bookmark referenced by `:id`
 
 ## TODO
 + Localization
++ Preview server side rendering image
++ Broken link checker
 + Redirect to a bookmark
 + Proxy a bookmark
 + Auth

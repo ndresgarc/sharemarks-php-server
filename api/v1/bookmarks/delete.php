@@ -14,9 +14,7 @@
 
     $bookmark = new Bookmark($db);
 
-    $data = json_decode(file_get_contents("php://input"));
-
-    $bookmark -> id = $data -> id;
+    $bookmark -> id = $_GET['id'];
 
     if ($bookmark -> delete()) {
         echo json_encode(
